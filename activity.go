@@ -28,11 +28,11 @@ func (a *FileInputActivity) Metadata() *activity.Metadata {
 func (a *FileInputActivity) Eval(context activity.Context) (done bool, err error)  {
 	pathname := context.GetInput("pathname").(string)
 
-	if s, err := ioutil.ReadFile(pathname); err != nil {
+	if bytes, err := ioutil.ReadFile(pathname); err != nil {
 		log.Errorf("%s: %s", pathname, err.Error())
 		return false, err
 	} else {
-		context.SetOutput("filecontents", s)
+		context.SetOutput("filecontents", string(bytes))
 		return true, nil
 	}
 }
