@@ -1,11 +1,12 @@
 {
   "name": "fileinput",
   "type": "flogo:activity",
-  "ref": "github.com/bryanpkc/fileinput",
+  "ref": "github.com/bryanpkc/flogo-extensions/fileinput",
   "version": "0.0.1",
+  "title": "Read File",
   "description": "Read the contents of a file",
   "author": "Bryan Chan <bryanpkc@gmail.com>",
-  "homepage": "https://github.com/bryanpkc/fileinput",
+  "homepage": "https://github.com/bryanpkc/flogo-extensions/fileinput",
   "inputs":[
     {
       "name": "pathname",
