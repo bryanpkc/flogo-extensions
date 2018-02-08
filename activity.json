@@ -1,13 +1,16 @@
 {
   "name": "fileinput",
-  "version": "0.0.1",
   "type": "flogo:activity",
-  "description": "Read the contents of a file into a string output parameter",
-  "author": "Bryan Chan <bryan.chan@huawei.com>",
+  "ref": "github.com/bryanpkc/fileinput",
+  "version": "0.0.1",
+  "description": "Read the contents of a file",
+  "author": "Bryan Chan <bryanpkc@gmail.com>",
+  "homepage": "https://github.com/bryanpkc/fileinput",
   "inputs":[
     {
       "name": "pathname",
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   ],
   "outputs": [
