@@ -9,6 +9,10 @@
   "homepage": "https://github.com/bryanpkc/flogo-extensions/mqtt",
   "inputs":[
     {
+      "name": "broker",
+      "type": "string"
+    },
+    {
       "name": "topic",
       "type": "string"
     },

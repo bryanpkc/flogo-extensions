@@ -25,8 +25,11 @@ func (a *MQTTActivity) Metadata() *activity.Metadata {
 
 // Eval implements activity.Activity.Eval
 func (a *MQTTActivity) Eval(context activity.Context) (done bool, err error)  {
-	// TODO: The client ID should probably be defined as a flow input parameter?
-	opts := mqtt.NewClientOptions().AddBroker("tcp://localhost:1883").SetClientID("flogo")
+	broker := context.GetInput("broker").(string)
+	// TODO: Ensure broker name is well-formed ("hostname:port").
+
+	// TODO: The client ID should probably be defined as another input parameter?
+	opts := mqtt.NewClientOptions().AddBroker("tcp://"+broker).SetClientID("flogo")
 	opts.SetKeepAlive(2 * time.Second)
 	opts.SetPingTimeout(1 * time.Second)
 
